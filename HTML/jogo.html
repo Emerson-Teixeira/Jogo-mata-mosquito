@@ -8,8 +8,24 @@
     <title>Jogo Mata Mosquito</title>
 </head>
 <body onload="ajustaPosicao()">
-    <script> setInterval(function(){
-        geraMosquitoAleatorio()
-    },700) </script>
+    <div id="hud">
+        <div id="vidas">
+            <img id="p1"class="coracao" src="../Recursos/coracao_cheio.png" alt="">
+            <img id="p2" class="coracao" src="../Recursos/coracao_cheio.png" alt="">
+            <img id="p3" class="coracao" src="../Recursos/coracao_cheio.png" alt="">
+        </div>
+        <div id="cronometro">
+            Tempo Restante:<span id="textoCronometro"></span>
+        </div>
+    </div>
+    <script> 
+
+        document.getElementById('textoCronometro').innerHTML = tempo
+        iniciaCronometro()
+        var iniciaJogo = setInterval(function(){
+            geraMosquitoAleatorio()
+        },dificuldade)
+
+     </script>
 </body>
 </html> 

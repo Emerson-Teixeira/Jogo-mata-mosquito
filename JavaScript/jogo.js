@@ -1,6 +1,49 @@
 var tela = window;
 var altura; 
 var largura;
+var pontosDeVida = 3;
+var tempo = 20;
+var dificuldade = 0;
+var nivel = window.location.search
+
+nivel = nivel.replace("?", "")
+
+
+
+if(nivel == 1 ){
+    dificuldade = 2000
+}
+if(nivel == 2 ){
+    dificuldade = 1500
+}
+if(nivel == 3 ){
+    dificuldade = 1000
+}
+
+
+function iniciarJogo(){
+    var dif = document.getElementById("diff").value
+    if (dif == 0 ){
+        alert('Selecione uma Dificuldade')
+    }
+    else{
+        
+        window.location.href = "../HTML/jogo.html?" + dif
+        
+    }
+}
+function iniciaCronometro(){
+    var cronometro = setInterval(function(){
+        tempo--;
+        if(tempo<0){
+            clearInterval(cronometro)
+            clearInterval(iniciaJogo)
+            window.location.href = "../HTML/vitoria.html"
+        }
+        else
+            document.getElementById('textoCronometro').innerHTML = tempo
+    },1000)
+}
 
 function ajustaPosicao (){
     altura = tela.innerHeight
@@ -32,7 +75,7 @@ function geraLadoAleatorio(){
 
 function geraPosicaoAleatoria(mosquito){
     var posicaoX = Math.floor(Math.random() * largura) - 110
-    var posicaoY = Math.floor(Math.random() * altura) - 110
+    var posicaoY = Math.floor(Math.random() * altura) - 310
     if(posicaoX<0){
         mosquito.style.left = 0 + "px"
     }
@@ -50,12 +93,20 @@ function geraPosicaoAleatoria(mosquito){
 function geraMosquitoAleatorio(){
     if (document.getElementById("alvo")){
         document.getElementById("alvo").remove()
+        document.getElementById("p"+pontosDeVida).src = "../Recursos/coracao_vazio.png"
+        pontosDeVida--
+        if (pontosDeVida==0){
+            window.location.href = "../HTML/gameOver.html"
+        }
     }
-    var mosquito = document.createElement('img')
-    mosquito.src = '../Recursos/mosca.png'
+    
+    var mosquito = document.createElement('div')
     mosquito.className = geraTamanhoAleatorio()+ " " + geraLadoAleatorio()
     geraPosicaoAleatoria(mosquito)
     mosquito.id = "alvo"
+    mosquito.onclick = function(){
+        this.remove()
+    }
     document.body.appendChild(mosquito)
 }
 

@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background:  url(../Recursos/bg.jpg) no-repeat;
     background-size: cover;
@@ -7,20 +12,130 @@ body{
     position: absolute;
     width: 50px;
     height: 50px;
+    background-image: url(../Recursos/mosca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .mosquito1{
     position: absolute;
     width: 75px;
     height: 75px;
+    background-image: url(../Recursos/mosca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .mosquito2{
     position: absolute;
     width: 100px;
     height: 100px;
+    background-image: url(../Recursos/mosca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .ladoA{
     transform:  scalex(1);
 }
 .ladoB{
     transform:  scalex(-1);
+}
+#hud{
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: column;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background-color:rgba(255, 251, 251, 0.7);
+    width: 300px;
+    height: 110px;
+}
+#vidas{
+
+    display: flex;
+    justify-content: space-evenly;
+}
+.coracao{
+    transform: scale(1.3);
+}
+#cronometro{
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+#container{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+#fimDeJogo{
+    background-image: url("../Recursos/game_over.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 750px;
+    height: 750px;
+}
+
+#botaoReinicio{
+    display: block;
+    width: 400px;
+    height: 50px;
+    background-color: darkgray;
+    box-shadow: 5px 5px 5px black;
+}
+#botaoReinicio:hover{
+    background-color: gray;
+}
+#botaoReinicio:focus{
+    outline: none;
+}
+
+#fimDeJogo-Vitoria{
+    background-image: url("../Recursos/vitoria.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 750px;
+    height: 750px;
+}
+
+#paginaInicial{
+    background-image: url("../Recursos/game.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 600px;
+    height: 600px;
+}
+
+#miniMenu{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
+}
+
+#botaoInicio{
+    width: 300px;
+    height: 50px;
+    background: brown;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: wheat;
+    order: 2;
+
+}
+
+#diff{
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    text-align-last: center;
+    text-align: center;
+}
+option{
+    text-transform: uppercase;
 }
