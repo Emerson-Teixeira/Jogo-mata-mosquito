@@ -1,2 +1,3 @@
 # Jogo-mata-mosquito
- Jogo feito em JavaScript
+ Jogo feito em JavaScript, CSS e HTML
+ 
