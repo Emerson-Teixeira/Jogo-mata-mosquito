@@ -2,8 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url(../Recursos/mata_mosca.png);
+    cursor: url(../Recursos/mata_mosca.png) 10 10, auto;
+    
 }
+
+
 body{
     background:  url(../Recursos/bg.jpg) no-repeat;
     background-size: cover;
