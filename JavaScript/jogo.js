@@ -11,13 +11,13 @@ nivel = nivel.replace("?", "")
 
 
 if(nivel == 1 ){
-    dificuldade = 2000
+    dificuldade = 1000
 }
 if(nivel == 2 ){
-    dificuldade = 1500
+    dificuldade = 750
 }
 if(nivel == 3 ){
-    dificuldade = 1000
+    dificuldade = 500
 }
 
 
